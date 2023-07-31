@@ -18,7 +18,7 @@ class CartProductPivotSeeder extends Seeder
             DB::table('carts_products_pivot')->insert(
                 [
                     'cart_id' => $i,
-                    'product_id' => fake()->numberBetween(101, 125), // an ID of any of the first 10 users
+                    'product_id' => fake()->numberBetween(1, 20)
                 ]
             );
         }

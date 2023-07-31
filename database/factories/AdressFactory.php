@@ -30,7 +30,7 @@ class AdressFactory extends Factory
         ];
 
         return [
-            'order_id' => fake()->numberBetween(21, 40), // an ID of any of the first 20 orders
+            'order_id' => fake()->numberBetween(1, 20), // an ID of any of the first 20 orders
             'text' => fake()->sentence(),
             'city' => fake()->randomElement( array_map(fn($pair) => $pair['city'], $countyAndCityPairs) ),
             'county' => fake()->randomElement( array_map(fn($pair) => $pair['county'], $countyAndCityPairs) )
