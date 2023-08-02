@@ -13,14 +13,21 @@ class CartProductPivotSeeder extends Seeder
      */
     public function run(): void
     {
+        // populate 10 carts
         for($i=1; $i<=10; $i++)
         {
-            DB::table('carts_products_pivot')->insert(
-                [
-                    'cart_id' => $i,
-                    'product_id' => fake()->numberBetween(1, 20)
-                ]
-            );
+            $productsPerCart = 5;
+
+            // populate 5 products for each cart
+            for($j=0; $j<$productsPerCart; $j++)
+            {
+                DB::table('carts_products_pivot')->insert(
+                    [
+                        'cart_id' => $i,
+                        'product_id' => fake()->numberBetween(1, 20)
+                    ]
+                );
+            }
         }
     }
 }

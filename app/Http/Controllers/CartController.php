@@ -37,6 +37,7 @@ class CartController extends Controller
     public function show(string $id)
     {
         $cart = Cart::find($id);
+        $cart->products = $cart->products;
 
         if(!$cart)
             return response()->json('Not found', 404);
